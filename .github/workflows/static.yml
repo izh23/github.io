@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe to My Channel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #ff4f4f;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    .sidebar {
+      width: 15%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sidebar iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .main-content {
+      width: 70%;
+      text-align: center;
+    }
+    iframe.main-video {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .subscribe-section {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+      width: 100%;
+    }
+    .subscribe-button {
+      background-color: #ff4f4f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .subscribe-button:hover {
+      background-color: #e24444;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #1e3c72;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Subscribe to My Channel!</h1>
+    <p>Help me grow by hitting the subscribe button below! 😔</p>
+  </header>
+  
+  <div class="content">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+      <iframe src="https://piclinks.in/viewDL?id=458160"></iframe>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <iframe 
+        id="youtube-video"
+        class="main-video"
+        src="https://www.youtube.com/embed/Sexxzp2R4Vw?enablejsapi=1&mute=1&autoplay=1" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+
+      <div class="subscribe-section">
+        <h2>Why Subscribe?</h2>
+        <p>Stay updated with my latest videos and support my journey to create more awesome content for you! 😊</p>
+        <button class="subscribe-button" onclick="subscribe()">Subscribe Now</button>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar">
+      <iframe src="https://www.profitablecpmrate.com/zpkmnqg0?key=4e1560aab59e6060a431cb60b46e8538"></iframe>
+    </div>
+  </div>
+  
+  <footer>
+    &copy; 2024 My Channel. All rights reserved.
+  </footer>
+
+  <script>
+    let hasPlayed = false;
+
+    function subscribe() {
+      window.location.href = "https://www.youtube.com/@MauMau-g4h";
+    }
+
+    function playVideo() {
+      const player = new YT.Player('youtube-video', {
+        events: {
+          onReady: function(event) {
+            event.target.playVideo(); // Play the video
+          }
+        }
+      });
+    }
+
+    // Scroll Event to Trigger Video Play
+    window.addEventListener('scroll', function () {
+      if (!hasPlayed) { // Play only once
+        hasPlayed = true; // Ensure it doesn't trigger multiple times
+        playVideo();
+      }
+    });
+
+    // Load YouTube IFrame API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+</body>
+</html>
